@@ -1,5 +1,22 @@
 package com.example.dogs.model
 
-data class Dog(val dogId :String?, val dogBreed : String?, val lifeSpan :String?, val breedGroup : String?, val bredFor : String?, val temperament : String?, val imageUrl : String?) {
+import com.google.gson.annotations.SerializedName
 
-}
+data class Dog(
+    @SerializedName("id")
+    val dogId : String?,
+    @SerializedName("name")
+    val dogBreed : String?,
+    @SerializedName("life_span")
+    val lifeSpan :String?,
+    @SerializedName("breed_group")
+    val breedGroup : String?,
+    @SerializedName("bred_for")
+    val bredFor : String?,
+    @SerializedName("temperament")
+    val temperament : String?,
+    @SerializedName("url")
+    val imageUrl : String?
+)
+
+

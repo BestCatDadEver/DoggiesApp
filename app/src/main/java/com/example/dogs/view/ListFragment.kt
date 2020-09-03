@@ -41,6 +41,14 @@ class ListFragment : Fragment() {
             adapter = dogsListAdapter
         }
 
+        refreshLayout.setOnRefreshListener {
+            dogsList.visibility = View.GONE
+            listError.visibility = View.GONE
+            loadingView.visibility = View.VISIBLE
+            viewModel.refresh()
+            refreshLayout.isRefreshing = false
+        }
+
         observeViewModel()
     }
 
@@ -55,7 +63,7 @@ class ListFragment : Fragment() {
         viewModel.dogsLoadError.observe(this, Observer {
             it?.let {
                 listError.visibility = if(it) View.VISIBLE else View.GONE
-                dogsList.visibility = View.GONE
+
             }
         })
 
