@@ -36,10 +36,12 @@ android {
         }
     }
 
-    dataBinding.enabled = true
+    android.buildFeatures.dataBinding = true
     android.defaultConfig.vectorDrawables.useSupportLibrary = true
 
 }
+
+
 
 
 def lifeCycleExtensionVersion = '1.1.1'

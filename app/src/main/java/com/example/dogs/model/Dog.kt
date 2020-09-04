@@ -39,4 +39,7 @@ data class Dog(
     var uuid : Int = 0
 }
 
+//This class has the color that will be assigned to each element. (DetailFragment)
+data class DogPalette(var color : Int)
+
 
