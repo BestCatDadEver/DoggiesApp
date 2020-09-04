@@ -9,6 +9,16 @@ android {
     compileSdkVersion 29
     buildToolsVersion "30.0.1"
 
+    //This was added in order to avoid errors in the edit in the shared preferences class.
+    compileOptions{
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions{
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
     defaultConfig {
         applicationId "com.example.dogs"
         minSdkVersion 15
