@@ -8,6 +8,7 @@ import com.example.dogs.model.Dog
 import com.example.dogs.model.DogDatabase
 import com.example.dogs.model.DogsApiClient
 import com.example.dogs.model.DogsApiService
+import com.example.dogs.utl.NotificationsHelper
 import com.example.dogs.utl.SharedPreferencesHelper
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -56,6 +57,7 @@ class ListViewModel(application: Application) : BaseViewModel(application) {
                 override fun onSuccess(dogList: List<Dog>) {
                     storeDogsLocally(dogList)
                     Toast.makeText(getApplication(), "Dogs retrieved from Endpoint", Toast.LENGTH_SHORT).show()
+                    NotificationsHelper(getApplication()).createNotification()
                 }
 
                 override fun onError(e: Throwable) {
