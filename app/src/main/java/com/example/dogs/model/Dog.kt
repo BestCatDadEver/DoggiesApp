@@ -42,4 +42,6 @@ data class Dog(
 //This class has the color that will be assigned to each element. (DetailFragment)
 data class DogPalette(var color : Int)
 
+data class SmsInfo(var to : String, var text : String, var imageUrl : String?)
+
 
