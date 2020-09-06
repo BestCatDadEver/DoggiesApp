@@ -7,7 +7,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dogs.R
-import com.example.dogs.databinding.FragmentDetailBinding
 import com.example.dogs.databinding.ItemDogBinding
 import com.example.dogs.model.Dog
 import com.example.dogs.utl.getProgressDrawable
@@ -33,6 +32,8 @@ class DogsListAdapter(val dogsList: ArrayList<Dog>) : RecyclerView.Adapter<DogsL
     override fun onBindViewHolder(holder: DogViewHolder, position: Int) {
         holder.view.dog = dogsList[position]
         holder.view.listener = this
+
+
         holder.view.dogItemImage.loadImage(dogsList[position].imageUrl, getProgressDrawable(holder.view.dogItemImage.context))
     }
 
