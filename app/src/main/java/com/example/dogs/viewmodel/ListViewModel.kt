@@ -3,10 +3,8 @@ package com.example.dogs.viewmodel
 import android.app.Application
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.example.dogs.model.Dog
 import com.example.dogs.model.DogDatabase
-import com.example.dogs.model.DogsApiClient
 import com.example.dogs.model.DogsApiService
 import com.example.dogs.utl.NotificationsHelper
 import com.example.dogs.utl.SharedPreferencesHelper
@@ -15,7 +13,6 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
 import kotlinx.coroutines.launch
-import java.lang.NumberFormatException
 
 class ListViewModel(application: Application) : BaseViewModel(application) {
 

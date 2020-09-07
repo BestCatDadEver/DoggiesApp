@@ -2,12 +2,9 @@ package com.example.dogs.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.example.dogs.model.Dog
 import com.example.dogs.model.DogDatabase
-import com.example.dogs.model.DogsApiService
 import kotlinx.coroutines.launch
-import java.util.*
 
 class DetailViewModel(application: Application) : BaseViewModel(application) {
 

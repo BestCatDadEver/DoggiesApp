@@ -8,11 +8,10 @@ import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.telephony.SmsManager
 import android.view.*
-import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import androidx.navigation.Navigation
 import androidx.palette.graphics.Palette
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.CustomTarget
@@ -23,10 +22,7 @@ import com.example.dogs.databinding.SendSmsDialogBinding
 import com.example.dogs.model.Dog
 import com.example.dogs.model.DogPalette
 import com.example.dogs.model.SmsInfo
-import com.example.dogs.utl.getProgressDrawable
-import com.example.dogs.utl.loadImage
 import com.example.dogs.viewmodel.DetailViewModel
-import kotlinx.android.synthetic.main.fragment_detail.*
 
 class DetailFragment : Fragment() {
 
@@ -110,7 +106,14 @@ class DetailFragment : Fragment() {
 
             }
             R.id.action_share -> {
-
+                val intent = Intent(Intent.ACTION_SEND)
+                intent.type = "text/plain"
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Check out this dog.")
+                intent.putExtra(Intent.EXTRA_TEXT, "${currentDog?.dogBreed} is a doggy bred for ${currentDog?.bredFor}")
+                //this is the way we have to send the image to a third party.
+                intent.putExtra(Intent.EXTRA_STREAM, currentDog?.imageUrl)
+                //This let the user choose the application he want's to be shared with.
+                startActivity(Intent.createChooser(intent, "Share with"))
             }
         }
         return super.onOptionsItemSelected(item)
