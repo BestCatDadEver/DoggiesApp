@@ -99,7 +99,6 @@ class ListViewModel(application: Application) : BaseViewModel(application) {
         disposable.clear()
     }
 
-
     private fun checkCacheDuration(){
         val cachePreference = prefHelper.getCacheDuration()
         try{
@@ -109,4 +108,5 @@ class ListViewModel(application: Application) : BaseViewModel(application) {
             e.printStackTrace()
         }
     }
+
 }
