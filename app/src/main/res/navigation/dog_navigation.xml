@@ -21,7 +21,7 @@
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.example.dogs.view.DetailFragment"
-        android:label="DetailFragment" >
+        android:label="Mierda" >
         <action
             android:id="@+id/action_detailFragment_to_listFragment"
             app:destination="@id/listFragment"
